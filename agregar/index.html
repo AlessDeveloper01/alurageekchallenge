@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
+		<meta name="generator" content="Astro v2.9.1">
+		<title>Agregar Porducto</title>
+	<link rel="stylesheet" href="../_astro/404.e44c2cec.css" />
+<link rel="stylesheet" href="../_astro/_id_.e219de1c.css" /><script type="module">const n=document.querySelector("#formulario"),c=document.querySelector("#url");document.querySelector("#select");const a=document.querySelector("#nombre"),u=document.querySelector("#precio"),s=document.querySelector("#descripcion"),d=async r=>{if(r.preventDefault(),c.value===""||a.value===""||u.value===""||s.value===""){t("Todos los campos son obligatorios","error");return}const o={id:`sw-${Math.floor(Math.random()*100)}`,nombre:a.value,precio:u.value,imagen:c.value,descripcion:s.value};try{if(!(await fetch("https://apialurageek-rk3e.onrender.com/productos",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)})).ok)throw new Error("Error al agregar el producto");t("Producto agregado correctamente","correcto"),n.reset()}catch(e){t(e.message,"error")}};n.addEventListener("submit",d);function t(r,o){const e=document.createElement("div");e.textContent=r,o==="error"?e.classList.add("bg-red-500","text-white","px-4","py-3","rounded","max-w-lg","mx-auto","text-center","mt-6"):e.classList.add("bg-green-500","text-white","px-4","py-3","rounded","max-w-lg","mx-auto","text-center","mt-6"),n.appendChild(e),setTimeout(()=>{e.remove()},3e3)}
+</script></head>
+	<body class="bg-white">
+		
+    
+    <header class="contenedor my-8">
+    <nav class="flex justify-between items-center">
+        <a href="/" class="flex gap-2 items-center">
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_486)">
+                <path d="M25.543 18.7717L24.2528 9.835C23.9214 7.53666 21.921 5.83333 19.5656 5.83333H8.84175C6.4863 5.83333 4.48594 7.53666 4.15452 9.835L2.86434 18.7717C2.60394 20.5683 4.01248 22.1667 5.84713 22.1667C6.65201 22.1667 7.40954 21.8517 7.97769 21.2917L10.6527 18.6667H17.7546L20.4178 21.2917C20.9859 21.8517 21.7553 22.1667 22.5484 22.1667C24.3948 22.1667 25.8034 20.5683 25.543 18.7717ZM13.02 12.8333H10.6527V15.1667H9.46908V12.8333H7.10179V11.6667H9.46908V9.33333H10.6527V11.6667H13.02V12.8333ZM17.7546 11.6667C17.1036 11.6667 16.571 11.1417 16.571 10.5C16.571 9.85833 17.1036 9.33333 17.7546 9.33333C18.4056 9.33333 18.9382 9.85833 18.9382 10.5C18.9382 11.1417 18.4056 11.6667 17.7546 11.6667ZM20.1219 15.1667C19.4709 15.1667 18.9382 14.6417 18.9382 14C18.9382 13.3583 19.4709 12.8333 20.1219 12.8333C20.7729 12.8333 21.3055 13.3583 21.3055 14C21.3055 14.6417 20.7729 15.1667 20.1219 15.1667Z" fill="#2A7AE4"></path>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_486">
+                <rect width="28.4075" height="28" fill="white"></rect>
+                </clipPath>
+                </defs>
+            </svg>
+
+            <h1 class="text-blue-700 font-bold">Alura<span class="text-gray-700">Geek</span></h1>
+        </a>
+
+        <a class="before:ease relative h-12 w-40 overflow-hidden border border-blue-500 text-blue-500 shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 before:duration-300 hover:text-white hover:shadow-blue-500 hover:before:h-64 hover:before:-translate-y-32 text-center md:order-1" href="/">
+            <span class="relative z-10">Inicio</span>
+        </a>
+
+        <a class="before:ease relative h-12 w-40 overflow-hidden border border-blue-500 text-blue-500 shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 before:duration-300 hover:text-white hover:shadow-blue-500 hover:before:h-64 hover:before:-translate-y-32 text-center md:order-1" href="/agregar">
+            <span class="relative z-10">Agregar</span>
+        </a>
+    </nav>
+</header>
+
+    <div class="contenedor my-8">
+    <h2 class="font-bold uppercase">Agregar Producto</h2>
+
+    <form class="my-6" id="formulario">
+        <div class="campo mb-8 block lg:flex lg:flex-col lg:items-center">
+            <label class="block text-gray-700 font-bold uppercase mb-4 lg:text-center" for="url">Url de la Imagen</label>
+            <input class="border border-gray-500 outline-none w-full lg:w-1/2 py-4 px-2 rounded-lg url" type="text" id="url" placeholder="Url de la Imagen">
+        </div>
+        <div class="campo mb-8 block lg:flex lg:flex-col lg:items-center">
+            <label class="block text-gray-700 font-bold uppercase mb-4 lg:text-center" for="select">Categoria</label>
+            <select name="select" id="select" class="w-full lg:w-1/2">
+                <option value="0">-- Seleccione --</option>
+                <option value="1">Star Wars</option>
+                <option value="2">Diversos</option>
+                <option value="2">Consolas</option>
+            </select>
+        </div>
+        <div class="campo mb-8 block lg:flex lg:flex-col lg:items-center">
+            <label class="block text-gray-700 font-bold uppercase mb-4 lg:text-center" for="nombre">Nombre del Producto</label>
+            <input class="border border-gray-500 outline-none w-full lg:w-1/2 py-4 px-2 rounded-lg" type="text" id="nombre" placeholder="Nombre del producto">
+        </div>
+        <div class="campo mb-8 block lg:flex lg:flex-col lg:items-center">
+            <label class="block text-gray-700 font-bold uppercase mb-4 lg:text-center" for="precio">Precio</label>
+            <input class="border border-gray-500 outline-none w-full lg:w-1/2 py-4 px-2 rounded-lg" type="text" id="precio" placeholder="Precio: 60.00">
+        </div>
+        <div class="campo mb-8 block lg:flex lg:flex-col lg:items-center">
+            <label class="block text-gray-700 font-bold uppercase mb-4 lg:text-center" for="descripcion">Descripcion</label>
+            <input class="border border-gray-500 outline-none w-full lg:w-1/2 py-4 px-2 rounded-lg" type="text" id="descripcion" placeholder="Descripcion del producto">
+        </div>
+
+        <input type="submit" class="bg-blue-600 text-white w-full py-6 px-4 lg:w-1/3 lg:flex lg:justify-center lg:mx-auto" value="Agregar Producto">
+    </form>
+</div>
+
+    <footer class="bg-blue-200">
+    <div class="contenedor flex flex-col py-8 md:grid md:grid-cols-3">
+        <div class="sec1 flex gap-4 justify-center items-center text-center md:text-4xl">
+            <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.9556 23.5208L38.6849 7.56246C38.1016 3.45829 34.581 0.416626 30.4354 0.416626H11.5614C7.41583 0.416626 3.8952 3.45829 3.3119 7.56246L1.04119 23.5208C0.582884 26.7291 3.06191 29.5833 6.29089 29.5833C7.70748 29.5833 9.04074 29.0208 10.0407 28.0208L14.7487 23.3333H27.248L31.9353 28.0208C32.9352 29.0208 34.2893 29.5833 35.6851 29.5833C38.9349 29.5833 41.4139 26.7291 40.9556 23.5208ZM18.9152 12.9166H14.7487V17.0833H12.6655V12.9166H8.4991V10.8333H12.6655V6.66663H14.7487V10.8333H18.9152V12.9166ZM27.248 10.8333C26.1023 10.8333 25.1648 9.89579 25.1648 8.74996C25.1648 7.60413 26.1023 6.66663 27.248 6.66663C28.3938 6.66663 29.3313 7.60413 29.3313 8.74996C29.3313 9.89579 28.3938 10.8333 27.248 10.8333ZM31.4145 17.0833C30.2687 17.0833 29.3313 16.1458 29.3313 15C29.3313 13.8541 30.2687 12.9166 31.4145 12.9166C32.5602 12.9166 33.4977 13.8541 33.4977 15C33.4977 16.1458 32.5602 17.0833 31.4145 17.0833Z" fill="#2A7AE4"></path>
+            </svg>
+            <h2 class="font-bold text-blue-600">Alura<span class="text-gray-700">Geek</span></h2>
+        </div>
+    
+        <div class="sec2">
+            <nav class="text-center flex flex-col items-center gap-y-4 my-12">
+                <a href="#" class="text-gray-800">Quienes somos</a>
+                <a href="#" class="text-gray-800">Política de privacidad</a>
+                <a href="#" class="text-gray-800">Programa de fidelidad</a>
+                <a href="#" class="text-gray-800">Nuestras tiendas</a>
+                <a href="#" class="text-gray-800">Quiero ser franquiciado</a>
+                <a href="#" class="text-gray-800">Anúncie Aqui</a>
+            </nav>
+        </div>
+    
+        <div class="sec3 px-8">
+            <h2 class="font-bold text-left">Contacta Con Nosotros</h2>
+
+            <form>
+                <input type="text" placeholder="Nombre" class="bg-white shadow-lg w-full outline-none p-2 mb-8">
+                <textarea placeholder="Escribe tu Mensaje" class="bg-white shadow-lg w-full outline-none mb-4 resize-none p-2"></textarea>
+
+                <button type="button" class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-white">
+        <p class="text-center text-gray-500 text-2xl py-4">Creado por @AlessDeveloper01</p>
+    </div>
+</footer>
+
+
+	</body></html>
